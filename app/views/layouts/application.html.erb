@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LewismsparlinRails</title>
+    <title>| Lewis M Sparlin</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div>
+
+			<section className="site-header">
+				<a href="/"> <%= render partial: "prismic_structured_text", locals: { fragment: @site_header_doc.fragments['title'] } %> </a>
+				<%= render partial: "prismic_structured_text",  locals: { fragment: @site_header_doc.fragments['subtitle'] } %>
+			</section> 
+			<div>
+				<%= yield %>
+			</div>
+
+    </div>
   </body>
 </html>
