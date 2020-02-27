@@ -1,3 +1,4 @@
+require 'prismic'
 
 class ContentLoader
   @@latest_content_loader=nil
