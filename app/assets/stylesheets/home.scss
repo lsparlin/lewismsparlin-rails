@@ -5,6 +5,15 @@
 body {
   .home {
 
+    .intro {
+      font-family: Courier New,Courier,monospace;
+      margin-top: 3rem;
+      margin-bottom: 6rem;
+      text-align: justify;
+      font-size: 2rem;
+      p:before { content: "// "; }
+    }
+
     .title {
       font-weight: 600;
     }
