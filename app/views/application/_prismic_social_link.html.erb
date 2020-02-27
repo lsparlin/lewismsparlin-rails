@@ -1,0 +1,6 @@
+
+<a href="<%= social_link.fragments['url'].url %>">
+  <% social_link.fragments['image'].main.tap do |image| %>
+    <img src="<%= image.url %>" height="<%= image.height %>" width="<%= image.width %>" alt="<%= 'Link to ' + social_link.fragments['name'].value %>" />
+  <% end %>
+</a>

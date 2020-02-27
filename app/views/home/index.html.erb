@@ -1,4 +1,7 @@
-<h1>Home#index</h1>
-<p><%= @site_header_doc.uid  %></p>
-<p> links <%= @social_link_docs.size %></p>
-<p> blogs <%= @blog_post_docs.size %></p>
+
+<% @blog_post_docs.each do |doc| %>
+  <a href='<%= "blog/#{doc.uid}" %>'>
+    <img src="<%= doc.fragments['title-image-small'].main.url %>" />
+    <p> <%= doc.fragments['title'].blocks.first.text %> </p>
+  </a>
+<% end %>
