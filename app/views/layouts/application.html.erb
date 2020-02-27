@@ -12,23 +12,23 @@
   <body>
     <div>
 
-			<section class="site-header container">
-        <a href="/">
-          <%= render partial: "prismic_structured_text", locals: { fragment: @site_header_doc.fragments['title'] } %> 
-        </a>
+    <section class="site-header container">
+      <a href="/">
+        <%= render partial: "prismic_structured_text", locals: { fragment: @site_header_doc.fragments['title'] } %> 
+      </a>
 
-        <div class="social-links">
-          <% @social_link_docs.each do |social_link| %>
-            <%= render partial: "prismic_social_link", locals: { social_link: social_link, size_multiplier: 1.5 } %>
-          <% end %>
-        </div>
+      <div class="social-links">
+        <% @social_link_docs.each do |social_link| %>
+          <%= render partial: "prismic_social_link", locals: { social_link: social_link, size_multiplier: 1.5 } %>
+        <% end %>
+      </div>
 
-				<%= render partial: "prismic_structured_text",  locals: { fragment: @site_header_doc.fragments['subtitle'] } %>
-			</section> 
+      <%= render partial: "prismic_structured_text",  locals: { fragment: @site_header_doc.fragments['subtitle'] } %>
+    </section> 
 
-			<div class="content-container">
-				<%= yield %>
-			</div>
+    <div class="content-container">
+      <%= yield %>
+    </div>
 
     </div>
   </body>
