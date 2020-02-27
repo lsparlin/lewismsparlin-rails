@@ -1,7 +1,9 @@
-<img src="<%= @blog_doc.fragments['title-image'].main.url %>" />
+<div class="blog">
+  <img src="<%= @blog_doc.fragments['title-image'].main.url %>" />
 
-<%= render partial: "prismic_structured_text", locals: { fragment: @blog_doc.fragments['title'] } %> 
+  <div class="blog-content container">
+    <%= render partial: "prismic_structured_text", locals: { fragment: @blog_doc.fragments['title'] } %> 
 
-<%= render partial: "prismic_structured_text", locals: { fragment: @blog_doc.fragments['subtitle'] } %> 
-
-
+    <%= render partial: "prismic_structured_text", locals: { fragment: @blog_doc.fragments['subtitle'] } %> 
+  </div>
+</div>
