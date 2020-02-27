@@ -9,8 +9,8 @@
         <div class="blog-listing four columns">
           <a href='<%= "blog/#{doc.uid}" %>'>
             <img src="<%= doc.fragments['title-image-small'].main.url %>" height="160rem" />
-            <%= render partial: "prismic_structured_text",  locals: { fragment: doc.fragments['title'] } %>
-            <%= render partial: "prismic_structured_text",  locals: { fragment: doc.fragments['subtitle'] } %>
+            <%= render partial: "prismic_fragment",  locals: { fragment: doc.fragments['title'] } %>
+            <%= render partial: "prismic_fragment",  locals: { fragment: doc.fragments['subtitle'] } %>
           </a>
         </div>
       <% end %>

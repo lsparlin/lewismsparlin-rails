@@ -14,7 +14,7 @@
 
     <section class="site-header container">
       <a href="/">
-        <%= render partial: "prismic_structured_text", locals: { fragment: @site_header_doc.fragments['title'] } %> 
+        <%= render partial: "prismic_fragment", locals: { fragment: @site_header_doc.fragments['title'] } %> 
       </a>
 
       <div class="social-links">
@@ -23,7 +23,7 @@
         <% end %>
       </div>
 
-      <%= render partial: "prismic_structured_text",  locals: { fragment: @site_header_doc.fragments['subtitle'] } %>
+      <%= render partial: "prismic_fragment",  locals: { fragment: @site_header_doc.fragments['subtitle'] } %>
     </section> 
 
     <div class="content-container">

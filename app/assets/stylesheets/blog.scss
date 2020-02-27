@@ -5,9 +5,16 @@
 .blog {
   > img {
     width: 100%;
+    max-height: 45rem;
+    object-fit: cover;
+    vertical-align: middle;
   }
 
   .blog-content {
+
+    .blog-fragment {
+      overflow: hidden;
+    }
 
   }
 }

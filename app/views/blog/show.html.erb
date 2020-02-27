@@ -2,8 +2,17 @@
   <img src="<%= @blog_doc.fragments['title-image'].main.url %>" />
 
   <div class="blog-content container">
-    <%= render partial: "prismic_structured_text", locals: { fragment: @blog_doc.fragments['title'] } %> 
+    <%= render partial: "prismic_fragment", locals: { fragment: @blog_doc.fragments['title'] } %> 
 
-    <%= render partial: "prismic_structured_text", locals: { fragment: @blog_doc.fragments['subtitle'] } %> 
+    <%= render partial: "prismic_fragment", locals: { fragment: @blog_doc.fragments['subtitle'] } %> 
+
+    <div class="blog-content">
+      <% @blog_doc.fragments['body'].slices.each do |slice| %>
+        <div class="blog-fragment">
+          <%= render partial: "prismic_fragment", locals: { fragment: slice } %>
+        </div>
+      <% end %>
+    </div>
+
   </div>
 </div>

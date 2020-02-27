@@ -30,4 +30,14 @@ body {
   .fill-view-height {
     min-height: calc(100vh + 5rem);
   }
+
+  .float-left {
+    float: left;
+    margin-right: 2rem;
+  }
+  
+  .float-right {
+    float: right;
+    margin-left: 2rem;
+  }
 }

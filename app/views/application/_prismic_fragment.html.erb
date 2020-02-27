@@ -1,0 +1,52 @@
+<% case %>
+<% when fragment.respond_to?(:blocks) %>
+  <% fragment.blocks.each do |block| %>
+
+    <% if block.respond_to? :level %>
+      <%= content_tag "h#{block.level}" do %>
+        <%= block.text %>
+      <% end %>
+
+    <% else %>
+      <p> <%= block.text %>
+    <% end %>
+  <% end %>
+
+<% when fragment.respond_to?(:main) %>
+  <% fragment.main.tap do |image| %>
+    <div>
+      <img src="<%= image.url %>" width="<%= image.width %>" height="<%= image.height %>" 
+        alt="<%= image.alt %>" />
+    </div>
+  <% end %>
+
+<% when fragment.respond_to?(:group_documents) %>
+  <% fragment.group_documents.first.tap do |group_doc| %>
+
+    <% if group_doc.fragments.key?("styled-code") %>
+      <pre class="language-<%= group_doc.fragments["styled-code-language"].value %>">
+        <%= group_doc.fragments["styled-code"].blocks.first.text %>
+      </pre>
+
+    <% elsif group_doc.fragments.key?("image-float") %>
+      <div class="paragraph-with-inline-image">
+        <div class="float-<%= group_doc.fragments["image-float"].value %>">
+          <% group_doc.fragments["image"].main.tap do |image| %>
+            <img src="<%= image.url %>" alt="<%= image.alt %>" />
+          <% end %>
+        </div>
+        <p> <%= group_doc.fragments["text"].blocks.first.text %> </p>
+      </div>
+
+    <% else %>
+      <p><%= group_doc.inspect %></p>
+    <% end %>
+  <% end %>
+
+<% when fragment.respond_to?(:value) %>
+  <%= render partial: "prismic_fragment", locals: { fragment: fragment.value } %>
+
+<% else %>
+  <p> <%= fragment.inspect %> </p>
+
+<% end %>
