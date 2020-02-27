@@ -1,0 +1,33 @@
+// Place all the styles related to the Application controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+  .site-header {
+    font-weight: 300;
+    text-align: center;
+    padding-top: 8rem;
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+    a:hover {
+      color: #555;
+      opacity: .75;
+    }
+
+    h1 {
+      font-size: 7rem;
+    }
+
+    h5 {
+      color: #777;
+    }
+
+  }
+
+  .fill-view-height {
+    min-height: calc(100vh + 5rem);
+  }
+}

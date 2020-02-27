@@ -1,7 +1,20 @@
 
-<% @blog_post_docs.each do |doc| %>
-  <a href='<%= "blog/#{doc.uid}" %>'>
-    <img src="<%= doc.fragments['title-image-small'].main.url %>" />
-    <p> <%= doc.fragments['title'].blocks.first.text %> </p>
-  </a>
-<% end %>
+<div class="home">
+  <section class="blog-section container">
+
+    <h1 class="title">Blog</h1>
+
+    <div class="row">
+      <% @blog_post_docs.each do |doc| %>
+        <div class="blog-listing four columns">
+          <a href='<%= "blog/#{doc.uid}" %>'>
+            <img src="<%= doc.fragments['title-image-small'].main.url %>" height="160rem" />
+            <%= render partial: "prismic_structured_text",  locals: { fragment: doc.fragments['title'] } %>
+            <%= render partial: "prismic_structured_text",  locals: { fragment: doc.fragments['subtitle'] } %>
+          </a>
+        </div>
+      <% end %>
+    </div>
+
+  </section>
+</div>

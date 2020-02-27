@@ -2,25 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.site-header {
-  font-weight: 300;
-  text-align: center;
+body {
+  .home {
 
-  a {
-    text-decoration: none;
-    color: #333;
-  }
-  a:hover {
-    color: #555;
-    opacity: .75;
-  }
+    .title {
+      font-weight: 600;
+    }
 
-  h1 {
-    font-size: 7rem;
-  }
+    .blog-listing {
+      border-radius: 1rem 1rem 0 0;
+      overflow: hidden;
 
-  h5 {
-    color: #777;
-  }
+      img {
+        width: 100%;
+        object-fit: cover;
+        vertical-align:middle;
+      }
 
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      h1, h3 {
+        letter-spacing: .025rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h3 {
+        font-size: 1.62rem;
+      }
+    }
+
+  }
 }
