@@ -1,3 +1,4 @@
+<%= content_for :title, @blog_doc.fragments['title'].blocks.first.text %>
 <div class="blog">
   <img src="<%= @blog_doc.fragments['title-image'].main.url %>" />
 

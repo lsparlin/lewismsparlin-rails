@@ -14,6 +14,28 @@
 
     .blog-fragment {
       overflow: hidden;
+
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 500;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-top: 5rem;
+      }
+
+      h3 {
+        font-size: 2.52rem;
+        color: #777;
+      }
+
+    }
+
+
+    p {
+      font-family: serif;
+      text-align: justify;
+      font-size: 2rem;
     }
 
   }
