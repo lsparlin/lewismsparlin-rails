@@ -4,9 +4,11 @@
   <div class="blog-title">
     <img src="<%= @blog_doc.fragments['title-image'].main.url %>" />
     
-    <%= render partial: "prismic_fragment", locals: { fragment: @blog_doc.fragments['title'] } %> 
+    <div class="padding-device-safe-area">
+      <%= render partial: "prismic_fragment", locals: { fragment: @blog_doc.fragments['title'] } %> 
 
-    <%= render partial: "prismic_fragment", locals: { fragment: @blog_doc.fragments['subtitle'] } %> 
+      <%= render partial: "prismic_fragment", locals: { fragment: @blog_doc.fragments['subtitle'] } %> 
+    </div>
   </div>
 
   <div class="blog-content container">

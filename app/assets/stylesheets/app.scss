@@ -49,4 +49,9 @@ body {
     float: right;
     margin-left: 2rem;
   }
+
+  .padding-device-safe-area {
+    padding-right: env(safe-area-inset-right);
+    padding-left: env(safe-area-inset-left);
+  }
 }
