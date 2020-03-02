@@ -4,6 +4,9 @@
 
 .blog {
   .blog-title {
+    @media (min-width: 750px) {
+      font-size: 130%;
+    }
 
     > img {
       width: 100%;
@@ -17,9 +20,6 @@
       padding: 0 10px;
       font-weight: 300;
     }
-    @media (min-width: 750px) {
-      font-size: 130%;
-    }
   }
 
   .blog-content {
@@ -30,36 +30,18 @@
 
     p {
       font-family: Times New Roman, serif;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       text-align: justify;
+      margin: .5em;
     }
+
     h2, h3, h4, h5, h6 {
-      color: #777;
+      margin-top: 1.5em;
+      color: #666;
     }
+
     .blog-fragment {
       overflow: hidden;
-
-      h1, h2, h3, h4, h5, h6 {
-        font-weight: 500;
-      }
-
-      h1 {
-        font-size: 3.5rem;
-        margin-top: 5rem;
-      }
-
-      h3 {
-        font-size: 2.52rem;
-        color: #777;
-      }
-
-    }
-
-
-    p {
-      font-family: serif;
-      text-align: justify;
-      font-size: 2rem;
     }
   }
 }
