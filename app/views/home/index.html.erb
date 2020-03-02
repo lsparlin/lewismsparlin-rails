@@ -1,18 +1,17 @@
 
-<div class="home">
-  <section class="blog-section container">
+<div class="home container">
+  <div class="intro">
+    <%= render partial: "prismic_fragment", locals: { fragment: @site_header_doc.fragments['bio'] } %>
+  </div>
 
-    <div class="intro">
-      <%= render partial: "prismic_fragment", locals: { fragment: @site_header_doc.fragments['bio'] } %>
-    </div>
-
+  <section class="blog-section">
     <h1 class="title">Blog</h1>
 
-    <div class="row">
+    <div class="blog-grid">
       <% @blog_post_docs.each do |doc| %>
         <div class="blog-listing four columns">
           <a href='<%= "blog/#{doc.uid}" %>'>
-            <img src="<%= doc.fragments['title-image-small'].main.url %>" height="160rem" />
+            <img src="<%= doc.fragments['title-image-small'].main.url %>" />
             <%= render partial: "prismic_fragment",  locals: { fragment: doc.fragments['title'] } %>
             <%= render partial: "prismic_fragment",  locals: { fragment: doc.fragments['subtitle'] } %>
           </a>

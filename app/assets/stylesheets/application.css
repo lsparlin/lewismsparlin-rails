@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
 body {
   color: #333;
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -22,6 +23,7 @@ body {
 @media (min-width: 750px) {
   body .container {
     width: 90%;
-    max-width: 1280px;
+    max-width: inherit;
+    margin: 0 auto;
   }
 }

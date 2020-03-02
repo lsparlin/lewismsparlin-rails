@@ -14,7 +14,7 @@
 
 <% when fragment.respond_to?(:main) %>
   <% fragment.main.tap do |image| %>
-    <div>
+    <div class="overflow-x-scroll">
       <img src="<%= image.url %>" width="<%= image.width %>" height="<%= image.height %>" 
         alt="<%= image.alt %>" />
     </div>

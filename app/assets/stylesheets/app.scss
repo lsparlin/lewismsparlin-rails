@@ -4,9 +4,12 @@
 
 body {
   .site-header {
-    font-weight: 300;
     text-align: center;
-    padding-top: 8rem;
+    padding-top: 4rem;
+    font-size: 115%;
+    @media (min-width: 600px) {
+      font-size: 150%;
+    }
 
     a {
       text-decoration: none;
@@ -18,10 +21,12 @@ body {
     }
 
     h1 {
-      font-size: 7rem;
+      font-size: 3em;
+      font-weight: 300;
+      margin: .25rem;
     }
 
-    h5 {
+    h3, h4, h5 {
       color: #777;
     }
 
@@ -29,6 +34,10 @@ body {
 
   .fill-view-height {
     min-height: calc(100vh + 5rem);
+  }
+
+  .overflow-x-scroll {
+    overflow-x: scroll;
   }
 
   .float-left {
