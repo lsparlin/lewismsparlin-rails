@@ -1,6 +1,7 @@
 <%= content_for :title, @blog_doc.fragments['title'].blocks.first.text %>
 <%= content_for :meta_description, "#{@blog_doc.fragments['title'].blocks.first.text} - #{@blog_doc.fragments['subtitle'].blocks.first.text}" %>
 <%= content_for :meta_image, @blog_doc.fragments['title-image-small'].main.url %>
+<%= content_for :meta_keywords, @blog_tags.join(',') %>
 
 <div class="blog">
 
@@ -8,7 +9,7 @@
     <img src="<%= @blog_doc.fragments['title-image'].main.url %>" />
     <div class="blog-meta">
       <%= @blog_doc.first_publication_date.strftime '%b%e, %Y' %>
-      <% @blog_doc.tags.select { |t| !t.start_with? 'category-' }.each do |tag| %>
+      <% @blog_tags.each do |tag| %>
         <%= link_to :controller => :tags, :action => :show, :id => tag do %>
           <span class="label"> <%= tag %> </span>
         <% end %>

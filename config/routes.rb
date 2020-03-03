@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resolve('Blog') { [:blog] }
 
   root 'home#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get '/404', to: 'errors#not_found'
 end
