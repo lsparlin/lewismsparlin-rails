@@ -12,9 +12,10 @@ class ContentLoader
   end
 
   def self.current
+    api_url = ENV.fetch('PRISMIC_URL')
     return @@latest_content_loader if @@latest_content_loader
     
-    @@latest_content_loader = ContentLoader.new('https://lewismsparlin.prismic.io/api')
+    @@latest_content_loader = ContentLoader.new(api_url)
   end
 
 end
