@@ -7,6 +7,8 @@
         <%= block.text %>
       <% end %>
 
+    <% elsif !block.spans.empty? %>
+      <p> <%= (block.as_html).html_safe %> </p>
     <% else %>
       <p> <%= block.text %>
     <% end %>
@@ -38,7 +40,7 @@
         <p> <%= group_doc.fragments["text"].blocks.first.text %> </p>
       </div>
 
-    <% else %>
+    <% elsif Rails.env.development? %>
       <p><%= group_doc.inspect %></p>
     <% end %>
   <% end %>
@@ -46,7 +48,7 @@
 <% when fragment.respond_to?(:value) %>
   <%= render partial: "prismic_fragment", locals: { fragment: fragment.value } %>
 
-<% else %>
+<% when Rails.env.development? %>
   <p> <%= fragment.inspect %> </p>
 
 <% end %>
