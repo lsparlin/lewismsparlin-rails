@@ -1,4 +1,7 @@
 <%= content_for :title, @blog_doc.fragments['title'].blocks.first.text %>
+<%= content_for :meta_description, "#{@blog_doc.fragments['title'].blocks.first.text} - #{@blog_doc.fragments['subtitle'].blocks.first.text}" %>
+<%= content_for :meta_image, @blog_doc.fragments['title-image-small'].main.url %>
+
 <div class="blog">
 
   <div class="blog-title">

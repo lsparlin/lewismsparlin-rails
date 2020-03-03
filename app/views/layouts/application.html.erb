@@ -2,7 +2,25 @@
 <html>
   <head>
     <title><%= title %></title>
+    <meta name="description" content="<%= meta_description %>">
+		<meta name="keywords" content="<%= meta_keywords %>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
+
+		<!-- Facebook Open Graph data -->
+		<meta property="og:title" content="<%= title %>" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="<%= request.original_url %>" />
+		<meta property="og:image" content="<%= meta_image %>" />
+		<meta property="og:description" content="<%= meta_description %>" />
+		<meta property="og:site_name" content="<%= title %>" />
+
+		<!-- Twitter Card data -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="<%= meta_twitter_account %>">
+		<meta name="twitter:title" content="<%= title %>">
+		<meta name="twitter:description" content="<%= meta_description %>">
+		<meta name="twitter:creator" content="<%= meta_twitter_account %>">
+		<meta name="twitter:image:src" content="<%= meta_image %>">
       
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
