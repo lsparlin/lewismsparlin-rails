@@ -32,6 +32,15 @@ body {
 
   }
 
+  .label {
+    font-weight: bold;
+    background-color: #777;
+    color: #fff;
+    border-radius: .25em;
+    padding: .18em .8em;
+    margin: 0 .1em;
+  }
+
   .fill-view-height {
     min-height: calc(100vh + 5rem);
   }

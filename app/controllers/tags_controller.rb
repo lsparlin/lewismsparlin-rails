@@ -1,8 +1,7 @@
 class TagsController < ApplicationController
 
-  def index
-  end
-
   def show
+    @tag = params[:id]
+    @tag_docs = ContentLoader.current.query_documents('document.tags', [@tag])
   end
 end

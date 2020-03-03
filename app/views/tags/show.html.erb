@@ -1,2 +1,17 @@
-<h1>Tags#show</h1>
-<p>Find me in app/views/tags/show.html.erb</p>
+<div class="tag">
+
+  <div class="container">
+    <h1>Tag: <span class="label"><%= @tag %></span> </h1>
+    <hr />
+
+    <div class="blog-list">
+      <% @tag_docs.each do |doc| %>
+        <%= link_to :controller => :blog, :action => :show, :id => doc.uid do %>
+          <%= render partial: 'prismic_fragment', locals: { fragment: doc.fragments['title'] } %>
+          <%= render partial: 'prismic_fragment', locals: { fragment: doc.fragments['subtitle'] } %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

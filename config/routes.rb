@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'tags/show'
   get 'blog/show'
   resources :blog, only: [:show]
-  resources :tags, only: [:index, :show]
+  resources :tags, only: [:show]
 
   resolve('Blog') { [:blog] }
 

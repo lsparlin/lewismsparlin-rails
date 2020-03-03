@@ -14,6 +14,18 @@
       object-fit: cover;
       vertical-align: middle;
     }
+    
+    .blog-meta {
+      padding-top: 5px;
+      padding-left: 1em;
+      margin-bottom: 3em;
+      color: #777;
+
+      a {
+        text-decoration: none; 
+        font-size: .65em;
+      }
+    }
 
     h1, h2, h3, h4, h5, h6 {
       margin: 0;
