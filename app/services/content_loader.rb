@@ -1,21 +1,28 @@
 require 'prismic'
 
 class ContentLoader
-  @@latest_content_loader=nil
+  @@singleton_content_loader=nil
 
-  def initialize(api_key)
-    @prismic_api = Prismic.api(api_key)
+  def initialize(api_url)
+    @prismic_api = Prismic.api(api_url)
   end
 
-  def query_at(identify_by, term)
-    @prismic_api.query(Prismic::Predicates.at(identify_by, term)).results
+  def byUID(document_type, uid)
+    @prismic_api.getByUID(document_type, uid)
   end
 
-  def self.current
+  def query_at(identify_by, term, orderings: [])
+    @prismic_api.query(
+      Prismic::Predicates.at(identify_by, term),
+      { 'orderings' => orderings.to_s.gsub('"', '') }
+    ).results
+  end
+
+  def self.default
     api_url = ENV.fetch('PRISMIC_URL')
-    return @@latest_content_loader if @@latest_content_loader
+    return @@singleton_content_loader if @@singleton_content_loader
     
-    @@latest_content_loader = ContentLoader.new(api_url)
+    @@singleton_content_loader = ContentLoader.new(api_url)
   end
 
 end

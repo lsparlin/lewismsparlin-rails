@@ -2,6 +2,6 @@ class TagsController < ApplicationController
 
   def show
     @tag = params[:id]
-    @tag_docs = ContentLoader.current.query_at('document.tags', [@tag])
+    @tag_docs = ContentLoader.default.query_at('document.tags', [@tag], orderings: ['document.first_publication_date desc'])
   end
 end

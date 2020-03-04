@@ -7,7 +7,7 @@
 
   <div class="blog-title">
     <img src="<%= @blog_doc.fragments['title-image'].main.url %>" />
-    <div class="blog-meta">
+    <div class="blog-meta padding-device-safe-area">
       <%= @blog_doc.first_publication_date.strftime '%b%e, %Y' %>
       <% @blog_tags.each do |tag| %>
         <%= link_to :controller => :tags, :action => :show, :id => tag do %>
