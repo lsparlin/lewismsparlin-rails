@@ -11,9 +11,9 @@ class ContentLoader
     @prismic_api.getByUID(document_type, uid)
   end
 
-  def query_at(identify_by, term, orderings: [])
+  def query_at(*term_pairs, orderings: [])
     @prismic_api.query(
-      Prismic::Predicates.at(identify_by, term),
+      term_pairs.each_slice(2).select { |s| s.size == 2 }.map { |s| Prismic::Predicates.at(s.first, s.last) },
       { 'orderings' => orderings.to_s.gsub('"', '') }
     ).results
   end
