@@ -7,7 +7,7 @@ class ContentLoader
     @prismic_api = Prismic.api(api_key)
   end
 
-  def query_documents(identify_by, term)
+  def query_at(identify_by, term)
     @prismic_api.query(Prismic::Predicates.at(identify_by, term)).results
   end
 
