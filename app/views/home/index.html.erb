@@ -9,7 +9,7 @@
 
     <div class="blog-grid">
       <% @blog_post_docs.each do |doc| %>
-        <div class="blog-listing four columns">
+        <div class="blog-listing">
           <%= link_to :controller => :blog, :action => :show, :id => doc.uid do %>
             <img src="<%= doc.fragments['title-image-small'].main.url %>" />
             <%= render partial: "prismic_fragment",  locals: { fragment: doc.fragments['title'] } %>
