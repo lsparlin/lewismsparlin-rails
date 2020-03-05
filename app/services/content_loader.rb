@@ -24,8 +24,7 @@ class ContentLoader
   end
 
   def refreshed
-    @fetch_time = Time.now
-    return self
+    self.class.new(@prismic_api)
   end
 
   def master_ref
