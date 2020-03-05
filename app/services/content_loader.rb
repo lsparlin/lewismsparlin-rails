@@ -6,7 +6,7 @@ class ContentLoader
 
   def self.default
     @@semaphore.synchronize do
-      return @@singleton_content_loader if @@singleton_content_loader && !@@singleton_content_loader.expired?
+      return @@singleton_content_loader if @@singleton_content_loader&.expired?
       
       @@singleton_content_loader = self.loader_with_latest_api_ref
     end
@@ -14,7 +14,7 @@ class ContentLoader
 
   def self.loader_with_latest_api_ref
     temp_api = Prismic.api ENV.fetch('PRISMIC_URL')
-    return @@singleton_content_loader.refreshed if @@singleton_content_loader && @@singleton_content_loader.master_ref == temp_api.master.ref
+    return @@singleton_content_loader.refreshed if  @@singleton_content_loader&.master_ref == temp_api.master.ref
     ContentLoader.new(temp_api) 
   end
 
