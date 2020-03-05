@@ -32,7 +32,7 @@ class ContentLoader
   end
 
   def expired?
-    Time.now > @fetch_time + (ENV.fetch('PRISMIC_EXPIRE_MIN') { 5 }).to_i.minutes
+    Time.now > @fetch_time + ENV.fetch('PRISMIC_EXPIRE_MIN', 5).to_i.minutes
   end
 
   def byUID(document_type, uid)
