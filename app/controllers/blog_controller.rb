@@ -2,7 +2,7 @@ class BlogController < ApplicationController
 
   def show
     @blog_doc = ContentLoader.default.byUID('blog-post', params[:id]) or not_found
-    @blog_tags = @blog_doc.tags.select { |t| !t.start_with? 'category-' }
+    @blog_tags = @blog_doc.tags.reject &ContentLoader.default.reject_tags.method(:include?)
   end
 
   private

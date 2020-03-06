@@ -11,6 +11,10 @@ class ContentLoader
       @@singleton_content_loader = self.loader_with_latest_api_ref
     end
   end
+  
+  def self.excluded_tags
+    ENV['PRISMIC_EXCLUDE_TAGS']&.split(/,\s*/) or []
+  end
 
   def initialize(api)
     @prismic_api = api
@@ -29,13 +33,27 @@ class ContentLoader
     Time.now > @fetch_time + ENV.fetch('PRISMIC_EXPIRE_MIN', 5).to_i.minutes
   end
 
+  def reject_tags
+    [ *self.class.excluded_tags, *@prismic_api.tags.select { |t| t.start_with? 'category-' } ]
+  end
+
   def byUID(document_type, uid)
     @prismic_api.getByUID(document_type, uid)
   end
 
-  def query_at(*term_pairs, orderings: [])
-    @prismic_api.query(
-      term_pairs.each_slice(2).select { |s| s.size == 2 }.map { |s| Prismic::Predicates.at(s.first, s.last) },
+  def query_single(document_type)
+    @prismic_api.getSingle(document_type)
+  end
+
+  def query_at(terms, not_terms: {}, orderings: [])
+    raise "Expecting terms to be of type hash; terms=#{terms.inspect}" if !terms.respond_to? :each_pair
+    raise "Expecting not_terms to be of type hash; not_terms=#{not_terms.inspect}" if !not_terms.respond_to? :each_pair
+
+    @prismic_api.query([
+      *terms&.each_pair.map { |key, value| Prismic::Predicates.at(key, value) },
+      *not_terms.each_pair.map { |key, value| Prismic::Predicates.not(key, value) },
+      *self.class.excluded_tags.map { |t| Prismic::Predicates.not('document.tags', [t]) }
+      ],
       { 'orderings' => orderings.to_s.gsub('"', '') }
     ).results
   end
