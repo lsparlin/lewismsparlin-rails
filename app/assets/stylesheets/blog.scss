@@ -35,17 +35,20 @@
   }
 
   .blog-content {
+    font-size: 130%;
     padding: 0 10px;
     @media (min-width: 750px) {
       padding: 0;
     }
 
-    p {
+    p, li {
       font-family: Times New Roman, serif;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       text-align: justify;
       margin: .5em;
+      line-height: 1.3em;
     }
+
 
     h2, h3, h4, h5, h6 {
       margin-top: 1.5em;

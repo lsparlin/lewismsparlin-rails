@@ -9,6 +9,8 @@
 
     <% elsif !block.spans.empty? %>
       <p> <%= (block.as_html).html_safe %> </p>
+    <% elsif block.respond_to?(:ordered) %>
+      <li> <%= block.text %> </li>
     <% else %>
       <p> <%= block.text %>
     <% end %>
@@ -43,6 +45,13 @@
     <% elsif Rails.env.development? %>
       <p><%= group_doc.inspect %></p>
     <% end %>
+  <% end %>
+
+<% when fragment.respond_to?(:value) && fragment.slice_type&.eql?('ordered-list') %>
+  <% if fragment.value.blocks.first.ordered %>
+    <ol><%= render partial: "prismic_fragment", locals: { fragment: fragment.value } %></ol>
+  <% else %>
+    <ul><%= render partial: "prismic_fragment", locals: { fragment: fragment.value } %></ul>
   <% end %>
 
 <% when fragment.respond_to?(:value) %>
