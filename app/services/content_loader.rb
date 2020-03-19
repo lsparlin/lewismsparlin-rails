@@ -1,20 +1,34 @@
 require 'prismic'
 
 class ContentLoader
+
   @@semaphore=Mutex.new
   @@singleton_content_loader=nil
 
-  def self.default
-    @@semaphore.synchronize do
-      return @@singleton_content_loader if @@singleton_content_loader&.expired?
-      
-      @@singleton_content_loader = self.loader_with_latest_api_ref
+  # Class scoped providers
+  class << self
+
+    def default
+      @@semaphore.synchronize do
+        return @@singleton_content_loader if @@singleton_content_loader&.expired?
+        
+        @@singleton_content_loader = loader_with_latest_api_ref
+      end
     end
-  end
-  
-  def self.excluded_tags
-    ENV['PRISMIC_EXCLUDE_TAGS']&.split(/,\s*/) or []
-  end
+    
+    def excluded_tags
+      ENV['PRISMIC_EXCLUDE_TAGS']&.split(/,\s*/) or []
+    end
+
+    private
+
+    def loader_with_latest_api_ref
+      temp_api = Prismic.api ENV.fetch('PRISMIC_URL')
+      return @@singleton_content_loader.refreshed if  @@singleton_content_loader&.master_ref == temp_api.master.ref
+      ContentLoader.new(temp_api) 
+    end
+  end 
+
 
   def initialize(api)
     @prismic_api = api
@@ -56,14 +70,6 @@ class ContentLoader
       ],
       { 'orderings' => orderings.to_s.gsub('"', '') }
     ).results
-  end
-
-  private
-
-  def self.loader_with_latest_api_ref
-    temp_api = Prismic.api ENV.fetch('PRISMIC_URL')
-    return @@singleton_content_loader.refreshed if  @@singleton_content_loader&.master_ref == temp_api.master.ref
-    ContentLoader.new(temp_api) 
   end
 
 end
