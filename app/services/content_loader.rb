@@ -10,7 +10,7 @@ class ContentLoader
 
     def default
       @@semaphore.synchronize do
-        return @@singleton_content_loader if @@singleton_content_loader&.expired?
+        return @@singleton_content_loader if @@singleton_content_loader && !@@singleton_content_loader.expired?
         
         @@singleton_content_loader = loader_with_latest_api_ref
       end
