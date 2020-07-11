@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@font-face {
+  font-family: 'MonoLisa';
+  src:font-url('MonoLisa-Regular.woff');
+  src:font-url('MonoLisa-Regular.otf');
+}
+
 body {
   .site-header {
     text-align: center;
@@ -21,9 +27,11 @@ body {
     }
 
     h1 {
+      font-family: 'MonoLisa';
       font-size: 3em;
       font-weight: 300;
       margin: .25rem;
+      letter-spacing: -5px;
     }
 
     h3, h4, h5 {
