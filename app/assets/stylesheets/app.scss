@@ -30,11 +30,14 @@ body {
 
     h1 {
       font-family: 'MonoLisa';
-      font-size: 3em;
+      font-size: 2.3em;
       font-weight: 300;
       margin: .25rem;
       letter-spacing: -5px;
       color: #9932CC;
+      @media(min-width: 600px) {
+        font-size: 3em;
+      }
     }
 
     h3, h4, h5 {
