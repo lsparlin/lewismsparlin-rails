@@ -40,11 +40,13 @@
 
       <div class="social-links">
         <% @social_link_docs.each do |social_link| %>
-          <%= render partial: "prismic_social_link", locals: { social_link: social_link, size_multiplier: 1.5 } %>
+          <%= render partial: "prismic_social_link", locals: { social_link: social_link } %>
         <% end %>
       </div>
 
-      <%= render partial: "prismic_fragment",  locals: { fragment: @site_header_doc.fragments['subtitle'] } %>
+      <% if @site_header_doc.fragments['subtitle'].present? -%>
+        <%= render partial: "prismic_fragment",  locals: { fragment: @site_header_doc.fragments['subtitle'] } %>
+      <% end %>
     </section> 
 
     <div class="content-container">
