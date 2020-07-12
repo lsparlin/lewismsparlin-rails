@@ -1,11 +1,11 @@
-
+<%= content_for :title, 'Hey' -%>
 <div class="home container">
   <div class="intro">
     <%= render partial: "prismic_fragment", locals: { fragment: @site_header_doc.fragments['bio'] } %>
   </div>
 
   <section class="blog-section">
-    <h1 class="title">Blog</h1>
+    <h1 class="title">Writings</h1>
 
     <div class="blog-grid">
       <% @blog_post_docs.each do |doc| %>
