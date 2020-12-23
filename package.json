@@ -2,6 +2,7 @@
   "name": "lewismsparlin_rails",
   "private": true,
   "dependencies": {
+    "@hotwired/turbo-rails": "^7.0.0-beta.1",
     "@rails/webpacker": "^5.1.1"
   },
   "version": "0.1.0",
