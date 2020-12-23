@@ -2,9 +2,7 @@
   "name": "lewismsparlin_rails",
   "private": true,
   "dependencies": {
-    "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "^5.1.1",
-    "turbolinks": "^5.2.0"
+    "@rails/webpacker": "^5.1.1"
   },
   "version": "0.1.0",
   "devDependencies": {
