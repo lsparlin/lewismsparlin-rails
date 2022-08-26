@@ -1,12 +1,13 @@
 {
   "name": "lewismsparlin_rails",
   "private": true,
-  "dependencies": {
-    "@hotwired/turbo-rails": "^7.0.0-beta.1",
-    "@rails/webpacker": "^5.1.1"
-  },
   "version": "0.1.0",
+  "dependencies": {
+    "@hotwired/turbo-rails": "~7.1.3",
+    "@rails/webpacker": "^5.4.3"
+  },
   "devDependencies": {
-    "webpack-dev-server": "^3.11.0"
+    "@webpack-cli/serve": "^1.7.0",
+    "webpack-dev-server": "^4.10.0"
   }
 }
