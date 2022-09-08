@@ -33,3 +33,5 @@ group :test do
   gem 'webdrivers'
 end
 
+
+gem "stimulus-rails", "~> 1.1"
