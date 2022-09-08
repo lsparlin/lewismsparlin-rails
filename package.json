@@ -12,8 +12,10 @@
   },
   "scripts": {
     "build:esbuild": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-    "build:sanity": "cd sanity_studio && sanity build ../public/studio -y",
+    "build:sanity": "cd sanity_studio && yarn install && sanity build ../public/studio -y",
+    "build:sanity:dev": "cd sanity_studio && sanity build ../public/studio -y",
     "build": "yarn run build:sanity && yarn run build:esbuild",
+    "build:dev": "yarn run build:sanity:dev && yarn run build:esbuild",
     "start:sanity": "cd sanity_studio && sanity start"
   }
 }
