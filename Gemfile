@@ -35,3 +35,5 @@ end
 
 
 gem "stimulus-rails", "~> 1.1"
+
+gem "sanity-ruby", "~> 0.2.0"
