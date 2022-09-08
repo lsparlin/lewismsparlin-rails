@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/studio/*anything', to: redirect('/studio')
+
   resources :blog, only: [:show]
   resources :tags, only: [:show]
 

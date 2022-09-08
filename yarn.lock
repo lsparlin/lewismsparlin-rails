@@ -30,6 +30,11 @@
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.3.tgz#71f08e958883af64f6a20489318b5e95d2c6dc5b"
   integrity sha512-Iefl21FZD+ck1di6xSHMYzSzRiNJTHV4NrAzCfDfqc/wPz4xncrP8f2/fJ+2jzwKIaDn76UVMsALh7R5OzsF8Q==
 
+"@sanity/cli@^2.32.0":
+  version "2.32.0"
+  resolved "https://registry.yarnpkg.com/@sanity/cli/-/cli-2.32.0.tgz#020a590736b3c8de78ed89edd02ead896b13909b"
+  integrity sha512-iddNAZToi8kfuYlavPHIm+O8mrKYwU1tPMmEdbyocpIv8r3mdWWjH1Xe5gLRd78k4B6J0oppTeus0U1PDdsZ8Q==
+
 esbuild-android-64@0.15.5:
   version "0.15.5"
   resolved "https://registry.yarnpkg.com/esbuild-android-64/-/esbuild-android-64-0.15.5.tgz#3c7b2f2a59017dab3f2c0356188a8dd9cbdc91c8"
