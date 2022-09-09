@@ -1,4 +1,4 @@
-import { BiHomeAlt } from 'react-icons/bi'
+import { BiCog } from 'react-icons/bi'
 import S from "@sanity/desk-tool/structure-builder";
 
 const Structure =
@@ -6,15 +6,22 @@ const Structure =
     .title("Content")
     .items([
       S.listItem()
-        .title("Home Page")
-        .child(
-          S.document()
-            .title("Home Page")
-            .id("homePage")
-            .documentId("homePage")
-            .schemaType("homePage"),
-        )
-        .icon(BiHomeAlt),
+      .title("Settings")
+      .child(
+        S.list()
+        .title("Settings")
+        .items([
+          S.listItem()
+          .title("Site Settings")
+          .child(
+            S.document()
+            .title("Site Settings")
+            .id("siteSettings")
+            .documentId("siteSettings")
+            .schemaType("siteSettings"),
+          ).icon(BiCog),
+        ])
+      ).icon(BiCog),
     ]);
 
 export default Structure;
