@@ -4,19 +4,5 @@
     <%= render partial: "prismic_fragment", locals: { fragment: @site_header_doc.fragments['bio'] } %>
   </div>
 
-  <section class="blog-section">
-    <h1 class="title">Writings</h1>
-
-    <div class="blog-grid">
-      <% @blog_post_docs.each do |doc| %>
-        <div class="blog-listing">
-          <%= link_to :controller => :blog, :action => :show, :id => doc.uid do %>
-            <%= render partial: "prismic_fragment",  locals: { fragment: doc.fragments['title'] } %>
-            <%= render partial: "prismic_fragment",  locals: { fragment: doc.fragments['subtitle'] } %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-
-  </section>
+  <%# render "writings" %>
 </div>
