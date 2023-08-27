@@ -1,8 +1,11 @@
 <%= content_for :title, 'Hey' -%>
 <div class="home container">
   <div class="intro">
-    <%= render partial: "prismic_fragment", locals: { fragment: @site_header_doc.fragments['bio'] } %>
+    <% @site_settings.bio.split("\n").map do |bio_line| %>
+      <p><%= bio_line %></p>
+    <% end %>
   </div>
 
+  <%# ## decided not to use this for now %>
   <%# render "writings" %>
 </div>

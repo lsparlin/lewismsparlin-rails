@@ -36,7 +36,7 @@
 
     <section class="site-header container">
       <a href="/">
-        <%= render partial: "prismic_fragment", locals: { fragment: @site_header_doc.fragments['title'] } %> 
+        <h1><%= @site_settings.title %></h1>
       </a>
 
       <div class="social-links">
@@ -45,8 +45,8 @@
         <% end %>
       </div>
 
-      <% if @site_header_doc.fragments['subtitle'].present? -%>
-        <%= render partial: "prismic_fragment",  locals: { fragment: @site_header_doc.fragments['subtitle'] } %>
+      <% if @site_settings.subtitle.present? -%>
+        <h4><%= @site_settings.subtitle %></h4>
       <% end %>
     </section> 
 
