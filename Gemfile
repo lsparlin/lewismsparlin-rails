@@ -10,7 +10,9 @@ gem 'sass-rails', '>= 6'
 gem 'turbo-rails'
 gem 'jsbundling-rails'
 gem 'pg'
-gem 'prismic.io'
+
+gem "stimulus-rails", "~> 1.1"
+gem "sanity-ruby", "~> 0.2.0"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -33,7 +35,3 @@ group :test do
   gem 'webdrivers'
 end
 
-
-gem "stimulus-rails", "~> 1.1"
-
-gem "sanity-ruby", "~> 0.2.0"

@@ -6,6 +6,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Documents
 import siteSettings from './documents/settings/site'
+//Object
+import socialLink from './objects/social_link'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -15,5 +17,6 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     siteSettings,
+    socialLink,
   ]),
 })

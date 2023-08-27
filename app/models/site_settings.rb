@@ -2,6 +2,7 @@ class SiteSettings < SanityModel
   attribute :title, :string
   attribute :subtitle, :string
   attribute :bio, :string
+  attribute :socialLinks
   attribute :description, :string
   attribute :keywords, :string
   attribute :twitter_account, :string

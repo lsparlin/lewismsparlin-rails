@@ -1,7 +1,0 @@
-
-<a rel="me" href="<%= social_link.fragments['url'].url %>" class="social-link">
-  <% social_link.fragments['image'].main.tap do |image| %>
-    <img src="<%= image.url %>" alt="<%= 'Link to ' + social_link.fragments['name'].value %>" />
-    <span class="sr-only"><%= social_link.fragments['name'].value %></span>
-  <% end %>
-</a>

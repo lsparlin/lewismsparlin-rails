@@ -10,6 +10,11 @@ class SanityContent::SiteSettingsQuery < Sanity::Resource
   *[_type == 'siteSettings'][0] {
     ...,
     "og_image_url": og_image.asset->url,
+    socialLinks[] {
+      title,
+      url,
+      "icon_url": icon.asset->url,
+    },
   }
     GROQ
   end

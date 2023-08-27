@@ -1,3 +1,4 @@
+
 export default {
   name: 'siteSettings',
   title: 'Site Settings',
@@ -32,6 +33,12 @@ export default {
       options: {
         rows: 3,
       },
+    },
+    {
+      name: 'socialLinks',
+      title: 'Social Links',
+      type: 'array',
+      of: [{ type: 'socialLink' }],
     },
 
     {

@@ -93,7 +93,6 @@ GEM
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
-    hashery (2.1.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     jsbundling-rails (1.1.2)
@@ -128,8 +127,6 @@ GEM
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
     pg (1.5.3)
-    prismic.io (1.8.2)
-      hashery (~> 2.1.1)
     public_suffix (5.0.3)
     puma (5.6.7)
       nio4r (~> 2.0)
@@ -237,7 +234,6 @@ DEPENDENCIES
   jsbundling-rails
   listen (>= 3.0.5, < 3.2)
   pg
-  prismic.io
   puma (~> 5.0)
   rails (~> 7.0.0)
   sanity-ruby (~> 0.2.0)
