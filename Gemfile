@@ -3,9 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
-gem "rails", "~> 7.0.0"
+gem "rails", "~> 7.1"
 gem "sprockets-rails"
-gem "puma", "~> 5.0"
+gem "puma", "~> 6.0"
 gem "sass-rails", ">= 6"
 gem "turbo-rails"
 gem "jsbundling-rails"
