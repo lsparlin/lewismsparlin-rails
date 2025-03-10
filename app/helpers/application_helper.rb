@@ -1,9 +1,9 @@
 module ApplicationHelper
-  def title 
+  def title
     if content_for?(:title)
       "#{content_for :title} | Lewis M Sparlin"
     else
-      "#{controller_name.capitalize } | Lewis M Sparlin"
+      "#{controller_name.capitalize} | Lewis M Sparlin"
     end
   end
 
